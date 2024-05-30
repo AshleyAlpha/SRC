@@ -38,14 +38,8 @@ function Login() {
         const response = await axios.post('https://safety-drive-connect-backend-project-2.onrender.com/api/v1/signin', { email, password });
         // Handle response
         console.log("API Response:", response.data);
-        navigate("booking");
-        // Assuming successful login response contains a token or some indicator
-        // if (response.data.loggedIn) {
-         
-        // } else {
-        //   // Handle unsuccessful login (e.g., display error message)
-        //   console.error("Login failed");
-        // }
+        navigate("/Dashboard");
+        
       } catch (error) {
         console.log(error);
         // if (axios.isAxiosError(error)) {

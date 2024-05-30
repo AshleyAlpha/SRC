@@ -32,7 +32,7 @@ const UpdateService = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://safety-drive-connect-backend-project-2.onrender.com/api/v1/updateService/${id}`, service);
+      await axios.patch(`https://safety-drive-connect-backend-project-2.onrender.com/api/v1/updateService/${id}`, service);
       
       navigate('/services');
     } catch (error) {

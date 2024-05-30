@@ -42,13 +42,9 @@ const Header = () => {
           </button>
         </NavLink> */}
 
-        <h1 className="text-center p-2 font-bold">SRC_YOUR RELIABLE RIDE ANYTIME, ANYWHERE!</h1>
+        {/* <h1 className="text-center p-2 font-bold">SRC_YOUR RELIABLE RIDE ANYTIME, ANYWHERE!</h1> */}
 
-        <NavLink to="/Addservice">
-          <button className="bg-green-700 text-green-200 py-1 px-4 rounded-3xl text-lg mt-2 sm:mt-0">
-            Add Service
-          </button>
-        </NavLink>
+        
       </div>
     </div>
   );

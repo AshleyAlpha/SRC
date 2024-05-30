@@ -21,14 +21,14 @@ const SideBar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 h-full pt-24 sm:pt-0  sm:w-48 bg-green-100  shadow-lg flex flex-col justify-between">
-      <div className="flex flex-col mt-28 gap-3 p-4 text-2xl font-bold">
+    <div className="fixed top-0 left-0 h-full  sm:pt-0  sm:w-48 bg-green-100  shadow-lg flex flex-col justify-between">
+      <div className="flex flex-col mt-2 gap-3 p-4 text-2xl font-bold">
         <Link to="/Dashboard" className="text-green-700 flex items-center">
           <AiOutlineDashboard className="mr-2" />
           Dashboard
         </Link>
 
-        <Link to="/" className="text-green-700 flex items-center">
+        <Link to="/Customers" className="text-green-700 flex items-center">
           <ImUsers className="mr-2" />
           Customers
         </Link>
@@ -38,7 +38,7 @@ const SideBar = () => {
           Drivers
         </Link>
 
-        <Link to="/ServiceChart" className="text-green-700 flex items-center">
+        <Link to="/Services" className="text-green-700 flex items-center">
           <FaServicestack className="mr-2" />
           Services
         </Link>

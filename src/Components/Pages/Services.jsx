@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
-import ServicesChart from './ServiceChart'; 
+import { NavLink, useNavigate } from 'react-router-dom';
+// import ServicesChart from './ServiceChart'; 
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -46,8 +46,14 @@ const Services = () => {
 
   return (
     <div className="p-4">
+      <NavLink to="/Addservice">
+          <button className="bg-green-700 text-green-200 py-1 px-4 rounded-3xl text-lg mt-2 sm:mt-0 mb-4">
+            Add Service
+          </button>
+        </NavLink>
+        
       <div className="overflow-x-auto">
-        <table className="w-full table-auto">
+        <table className="w-full table-auto mb-4">
           <thead>
             <tr className="bg-green-700 text-white">
               <th className="py-2">Service</th>
@@ -77,9 +83,9 @@ const Services = () => {
           currentPage={currentPage}
         />
       </div>
-      <div className="mt-8">
+      {/* <div className="mt-8">
         <ServicesChart services={services} />
-      </div>
+      </div> */}
     </div>
   );
 };

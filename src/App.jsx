@@ -1,6 +1,5 @@
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
-import NavBar from "./Components/Navbar";
-import Footer from "./Components/Footer";
+import Layout from "./Components/Layout";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Service from "./Pages/Service";
@@ -16,7 +15,7 @@ import Login from "./Pages/Login";
 import DriverDashboard from "./Components/DriverDashboard";
 
 
-import Layoute from "./Components/Pages/Layouty";
+import Layouty from "./Components/Pages/Layouty";
 import Services from "./Components/Pages/Services";
 import AddService from "./Components/Pages/Addservice";
 import Dashboard from "./Components/Pages/Dashboard";
@@ -24,18 +23,16 @@ import Testimonials from "./Components/Pages/Testimonials";
 import Customers from "./Components/Pages/Customers";
 import Drivers from "./Components/Pages/Drivers";
 import LogoutButton from "./Components/Pages/LogoutForm";
-import ServicesChart from "./Components/Pages/ServiceChart";
+// import ServicesChart from "./Components/Pages/ServiceChart";
 import UpdateService from "./Components/Pages/Editservice";
 
-const Layout = () => {
-  return (
-    <>
-      <NavBar />
-      <Outlet />
-      <Footer />
-    </>
-  );
-};
+// const Layout = () => {
+//   return (
+//     <>
+      
+//     </>
+//   );
+// };
 function App() {
   return (
     <BrowserRouter>
@@ -57,18 +54,18 @@ function App() {
           <Route/>
 
 
-          <Route path="/" element={<Layoute />}>
+        </Route>
+          <Route path="/" element={<Layouty/>}>
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/Addservice" element={<AddService />} />
             <Route path="/Services" element={<Services />} />
             <Route path="/Drivers" element={<Drivers />} />
             <Route path="/Customers" element={<Customers />} />
             <Route path="/Testimonials" element={<Testimonials />} />
-            <Route path="/ServiceChart" element={<ServicesChart />} />
+            {/* <Route path="/ServiceChart" element={<ServicesChart />} /> */}
             <Route path="/Editservice/:id" element={<UpdateService />} />
             <Route path="/LogoutForm" element={<LogoutButton />} />
           </Route>
-        </Route>
       </Routes>
     </BrowserRouter>
   );

@@ -7,8 +7,7 @@ import SideBar from '../Sidebar';
 const Layout = () => {
   return (
     <div className=" p-3 w-full h-full">
-        <Header/>
-        {/* <LogoutButton /> */}
+        {/* <Header/> */}
      <div className="flex w-full">
         <SideBar/>
         <div className="flex p-3 w-full rounded-lg pl-64 pt-2">

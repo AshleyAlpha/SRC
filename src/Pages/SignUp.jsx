@@ -68,10 +68,11 @@ const SignUp = () => {
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault()
     if (validateForm() === true) {
       await axios({
         method: "POST",
-        url: "https://safety-drive-connect-backend-project-2.onrender.com/signup",
+        url: "https://safety-drive-connect-backend-project-2.onrender.com/api/signup",
         data: {
           userName: userName,
           email: email,
@@ -98,7 +99,7 @@ const SignUp = () => {
         <h2 className="text-2xl md:text-3xl font-semibold text-center text-black uppercase mb-8 md:mb-16">
           Sign Up
         </h2>
-        <form onSubmit={handleSubmit}>
+        <form>
           <div className="mb-4">
             <input
               className="border-2 rounded-lg text-black px-4 py-2 w-full bg-white"
@@ -148,6 +149,7 @@ const SignUp = () => {
             {roleError && <p className="text-red-500">{roleError}</p>}
           </div>
           <button
+          onClick={(e)=>{handleSubmit(e)}}
             className="w-full  px-4 py-2 tracking-wide bg-green-700 rounded-xl text-white transition-colors duration-200 transform hover:bg-green-600 focus:outline-none"
             type="submit"
           >

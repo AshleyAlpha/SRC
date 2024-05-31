@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-
 const Home = () => {
   const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
@@ -60,7 +59,7 @@ const Home = () => {
   };
   return (
     <>
-      <section className="relative bg-[url(car1.jpg)] bg-cover  rounded-lg m-0 bg-center bg-no-repeat">
+      <section className="relative bg-[url(/car1.jpg)] bg-cover  rounded-lg m-0 bg-center bg-no-repeat">
         <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
           <div className="mx-auto max-w-xl text-center">
             <div>
@@ -96,9 +95,7 @@ const Home = () => {
                 </button>
               </Link>
               <Link to={"/Login"}>
-                <button
-                  className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-green-500 shadow hover:text-green-500 focus:outline-none focus:ring active:text-green-500 sm:w-auto"
-                >
+                <button className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-green-500 shadow hover:text-green-500 focus:outline-none focus:ring active:text-green-500 sm:w-auto">
                   Become a Driver
                 </button>
               </Link>

@@ -41,7 +41,7 @@ const Contact = () => {
 
     if (validateForm()) {
       try {
-        const response = await fetch("https://safety-drive-connect-backend-project-2.onrender.com/createReachout", {
+        const response = await fetch("https://safety-drive-connect-backend-project-2.onrender.com/api/v1/createReachout", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

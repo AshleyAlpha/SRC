@@ -55,18 +55,18 @@ const Services = () => {
       <div className="overflow-x-auto">
         <table className="w-full table-auto mb-4">
           <thead>
-            <tr className="bg-green-700 text-white">
+            <tr className="bg-green-700 text-green-200">
               <th className="py-2">Service</th>
               <th className="py-2">Description</th>
-              <th className="py-2">Actions</th>
+              <th className="py-2 pr-8">Actions</th>
             </tr>
           </thead>
           <tbody>
             {currentServices.map((service) => (
               <tr key={service._id} className="border-t">
-                <td className="py-2">{service.name}</td>
-                <td className="py-2">{service.description}</td>
-                <td className="py-2">
+                <td className="p-8">{service.name}</td>
+                <td className="p-8">{service.description}</td>
+                <td className="p-8">
                   <button onClick={() => handleEdit(service._id)} className="text-[#a3d6a3] mr-2 mb-2 block">Edit</button>
                   <button onClick={() => handleDelete(service._id)} className="text-green-700 block">Delete</button>
                 </td>

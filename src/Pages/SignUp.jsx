@@ -72,7 +72,7 @@ const SignUp = () => {
     if (validateForm() === true) {
       await axios({
         method: "POST",
-        url: "https://safety-drive-connect-backend-project-2.onrender.com/api/signup",
+        url: "https://safety-drive-connect-backend-project-2.onrender.com/api/v1/signup",
         data: {
           userName: userName,
           email: email,

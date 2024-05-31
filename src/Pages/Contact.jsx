@@ -46,7 +46,7 @@ const Contact = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ name, email, subject, message }),
+          body: JSON.stringify({ Name: name, email, subject, message }), // Capitalize "Name" field
         });
 
         if (response.ok) {
@@ -108,6 +108,7 @@ const Contact = () => {
           <input
             type="text"
             id="name"
+            name="Name" 
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-green-700"
@@ -121,6 +122,7 @@ const Contact = () => {
           <input
             type="email"
             id="email"
+            name="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-green-700"

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { NavLink, useNavigate } from 'react-router-dom';
-// import ServicesChart from './ServiceChart'; 
 
 const Services = () => {
   const [services, setServices] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [servicesPerPage] = useState(10); // Number of services per page, you can adjust this as needed
+  const [servicesPerPage] = useState(10);
+  const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,7 +24,11 @@ const Services = () => {
 
   const indexOfLastService = currentPage * servicesPerPage;
   const indexOfFirstService = indexOfLastService - servicesPerPage;
-  const currentServices = services.slice(indexOfFirstService, indexOfLastService);
+  const filteredServices = services.filter(service =>
+    service.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    service.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+  const currentServices = filteredServices.slice(indexOfFirstService, indexOfLastService);
 
   const handleEdit = (id) => {
     navigate(`/Editservice/${id}`);
@@ -46,12 +50,25 @@ const Services = () => {
 
   return (
     <div className="p-4">
-      <NavLink to="/Addservice">
+      <div className="flex justify-between items-center mb-4">
+        <NavLink to="/Addservice">
           <button className="bg-green-700 text-green-200 py-1 px-4 rounded-3xl text-lg mt-2 sm:mt-0 mb-4">
             Add Service
           </button>
         </NavLink>
-        
+        <div className="relative">
+          <input 
+            type="text" 
+            placeholder="Search services" 
+            className="border border-gray-300 rounded-md py-1 px-3 focus:outline-none focus:border-green-500" 
+            value={searchQuery} 
+            onChange={(e) => setSearchQuery(e.target.value)} 
+          />
+          <button className="absolute right-0 top-0 bg-green-700 text-green-200 rounded-r-md px-3 py-1" onClick={() => setSearchQuery('')}>
+            Clear
+          </button>
+        </div>
+      </div>
       <div className="overflow-x-auto">
         <table className="w-full table-auto mb-4">
           <thead>
@@ -78,14 +95,11 @@ const Services = () => {
       <div className="mt-4 flex justify-between items-center">
         <Pagination
           itemsPerPage={servicesPerPage}
-          totalItems={services.length}
+          totalItems={filteredServices.length}
           paginate={paginate}
           currentPage={currentPage}
         />
       </div>
-      {/* <div className="mt-8">
-        <ServicesChart services={services} />
-      </div> */}
     </div>
   );
 };

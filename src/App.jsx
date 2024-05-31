@@ -23,16 +23,10 @@ import Testimonials from "./Components/Pages/Testimonials";
 import Customers from "./Components/Pages/Customers";
 import Drivers from "./Components/Pages/Drivers";
 import LogoutButton from "./Components/Pages/LogoutForm";
-// import ServicesChart from "./Components/Pages/ServiceChart";
+import Messages from "./Components/Pages/Messages";
 import UpdateService from "./Components/Pages/Editservice";
 
-// const Layout = () => {
-//   return (
-//     <>
-      
-//     </>
-//   );
-// };
+
 function App() {
   return (
     <BrowserRouter>
@@ -64,7 +58,9 @@ function App() {
             <Route path="/Testimonials" element={<Testimonials />} />
             {/* <Route path="/ServiceChart" element={<ServicesChart />} /> */}
             <Route path="/Editservice/:id" element={<UpdateService />} />
+            <Route path="/Messages" element={<Messages />} />
             <Route path="/LogoutForm" element={<LogoutButton />} />
+            
           </Route>
       </Routes>
     </BrowserRouter>

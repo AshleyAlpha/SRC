@@ -37,16 +37,16 @@ const AddService = () => {
 
   return (
     <div>
-      <div className="container mx-auto mt-8 p-6 bg-white rounded-lg shadow-md max-w-md">
-        <h2 className="text-2xl font-bold mb-6">Add Service</h2>
+      <div className="m-80 container  mt-8 p-6 bg-green-200 rounded-lg shadow-md max-w-md">
+        <h2 className="text-3xl text-green-700 font-bold mb-6">Add Service</h2>
         {successMessage && (
           <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
             <span className="block sm:inline">{successMessage}</span>
           </div>
         )}
-        <form action="#" method="post">
+        <form action="#" method="post" className="">
           <div className="mb-4">
-            <label htmlFor="serviceName" className="block font-semibold mb-1">
+            <label htmlFor="serviceName" className="block font-semibold mb-1 text-green-700">
               Service Name:
             </label>
             <input
@@ -60,13 +60,13 @@ const AddService = () => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="serviceDescription" className="block font-semibold mb-1">
+            <label htmlFor="serviceDescription" className="block font-semibold mb-1 text-green-700">
               Service Description:
             </label>
             <textarea
               id="serviceDescription"
               name="serviceDescription"
-              className="ww-full p-2 border rounded-md resize-none h-32 overflow-y-auto"
+              className="w-full p-2 border rounded-md resize-none h-32 overflow-y-auto"
               value={description}
               required
               onChange={(e) => {
@@ -76,7 +76,7 @@ const AddService = () => {
           </div>
         </form>
         <button
-          className="bg-green-700 text-white font-semibold py-2 px-4 cursor-pointer mt-4 w-full p-2 border rounded-md"
+          className="bg-green-700 text-green-200 font-semibold py-2 px-4 cursor-pointer mt-4 w-full p-2 border rounded-md"
           onClick={fetchService}
         >
           Add

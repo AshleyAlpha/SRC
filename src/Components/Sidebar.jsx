@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { AiOutlineDashboard } from "react-icons/ai";
+import { TiMessages } from "react-icons/ti";
+import { FiMessageCircle } from "react-icons/fi";
 import {
-  FaUsers,
   FaServicestack,
-  FaChevronDown,
-  FaChevronUp,
   FaCarSide,
 } from "react-icons/fa";
 import { ImUsers } from "react-icons/im";
-import { BiMessageDetail } from "react-icons/bi";
-import { GrUserAdmin } from "react-icons/gr";
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
 
 const SideBar = () => {
@@ -44,12 +41,21 @@ const SideBar = () => {
         </Link>
 
         <Link
+          to="/Messages"
+          className="text-green-700 flex items-center"
+        >
+          <TiMessages className="mr-2" />
+          Messages
+        </Link>
+
+        <Link
           to="/Testimonials"
           className="text-green-700 flex items-center"
         >
-          <BiMessageDetail className="mr-2" />
+          <FiMessageCircle className="mr-2" size={24}/>
           Testimonials
         </Link>
+
       </div>
 
       <div className="p-4">

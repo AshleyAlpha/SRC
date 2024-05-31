@@ -33,7 +33,7 @@ const Messages = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://safety-drive-connect-backend-project-2.onrender.com/api/v1/viewReachout${id}`);
+      await axios.delete(`https://safety-drive-connect-backend-project-2.onrender.com/api/v1/viewReachout/${id}`);
       setMessages(messages.filter(message => message._id !== id));
       console.log('Message deleted successfully');
     } catch (error) {
@@ -54,7 +54,7 @@ const Messages = () => {
             value={searchQuery} 
             onChange={(e) => setSearchQuery(e.target.value)} 
           />
-          <button className="absolute right-0 top-0 bg-green-700 text-green-200 py-1 px-4 rounded-3xl text-lg mt-2 sm:mt-0 mb-4" onClick={() => setSearchQuery('')}>
+          <button className="absolute right-0 top-0 bg-green-700 text-green-200 py-1 px-4 text-lg mt-2 sm:mt-0 mb-4" onClick={() => setSearchQuery('')}>
             Clear
           </button>
         </div>
@@ -74,7 +74,7 @@ const Messages = () => {
             {currentMessages.map((message) => (
               <tr key={message._id} className="border-t">
                 <td className="p-8 font-bold">{message.Name}</td>
-                <td className="p-8">{message.Email}</td>
+                <td className="p-8">{message.email}</td>
                 <td className="p-8">{message.subject}</td>
                 <td className="p-8">{message.message}</td>
                 <td className="p-8">

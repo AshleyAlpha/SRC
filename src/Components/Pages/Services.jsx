@@ -52,7 +52,7 @@ const Services = () => {
     <div className="p-4">
       <div className="flex justify-between items-center mb-4">
         <NavLink to="/Addservice">
-          <button className="bg-green-700 text-green-200 py-1 px-4 rounded-3xl text-lg mt-2 sm:mt-0 mb-4">
+          <button className="bg-green-700 text-green-200 py-1 px-4  text-lg mt-2 sm:mt-0 mb-4">
             Add Service
           </button>
         </NavLink>
@@ -64,7 +64,7 @@ const Services = () => {
             value={searchQuery} 
             onChange={(e) => setSearchQuery(e.target.value)} 
           />
-          <button className="absolute right-0 top-0 bg-green-700 text-green-200 py-1 px-4 rounded-3xl text-lg mt-2 sm:mt-0 mb-4" onClick={() => setSearchQuery('')}>
+          <button className="absolute right-0 top-0 bg-green-700 text-green-200 py-1 px-4  text-lg mt-2 sm:mt-0 mb-4" onClick={() => setSearchQuery('')}>
             Clear
           </button>
         </div>

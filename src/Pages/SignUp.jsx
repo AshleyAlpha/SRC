@@ -86,6 +86,7 @@ const SignUp = () => {
         .then((response) => {
           console.log(response.data);
           localStorage.setItem("token", response.data.token);
+          navigate("/OTP");
         })
         .catch((error) => {
           console.log(error);

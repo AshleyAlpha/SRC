@@ -64,7 +64,7 @@ const Services = () => {
             value={searchQuery} 
             onChange={(e) => setSearchQuery(e.target.value)} 
           />
-          <button className="absolute right-0 top-0 bg-green-700 text-green-200 rounded-r-md px-3 py-1" onClick={() => setSearchQuery('')}>
+          <button className="absolute right-0 top-0 bg-green-700 text-green-200 py-1 px-4 rounded-3xl text-lg mt-2 sm:mt-0 mb-4" onClick={() => setSearchQuery('')}>
             Clear
           </button>
         </div>
@@ -81,7 +81,7 @@ const Services = () => {
           <tbody>
             {currentServices.map((service) => (
               <tr key={service._id} className="border-t">
-                <td className="p-8">{service.name}</td>
+                <td className="p-8 font-bold">{service.name}</td>
                 <td className="p-8">{service.description}</td>
                 <td className="p-8">
                   <button onClick={() => handleEdit(service._id)} className="text-[#a3d6a3] mr-2 mb-2 block">Edit</button>

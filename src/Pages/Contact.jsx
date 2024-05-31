@@ -41,7 +41,7 @@ const Contact = () => {
 
     if (validateForm()) {
       try {
-        const response = await fetch("https://safety-drive-connect-backend-project-2.onrender.com/reachout", {
+        const response = await fetch("https://safety-drive-connect-backend-project-2.onrender.com/createReachout", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -110,7 +110,7 @@ const Contact = () => {
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-blue-500"
+            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-green-700"
           />
           {errors.name && <p className="text-red-500">{errors.name}</p>}
         </div>
@@ -123,7 +123,7 @@ const Contact = () => {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-green-700"
           />
           {errors.email && <p className="text-red-500">{errors.email}</p>}
         </div>
@@ -136,7 +136,7 @@ const Contact = () => {
             id="subject"
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
-            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-blue-500"
+            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-green-700"
           />
           {errors.subject && <p className="text-red-500">{errors.subject}</p>}
         </div>
@@ -148,13 +148,13 @@ const Contact = () => {
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-blue-500"
+            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-green-700"
           ></textarea>
           {errors.message && <p className="text-red-500">{errors.message}</p>}
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-2xl text-white px-6 py-3 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+          className="bg-green-700 text-2xl text-white px-6 py-3 rounded-md hover:bg-green-700 focus:outline-none focus:bg-green-700"
         >
           Submit
         </button>

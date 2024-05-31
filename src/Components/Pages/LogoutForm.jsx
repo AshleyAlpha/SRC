@@ -6,7 +6,7 @@ const LogoutButton = () => {
   // const history = useHistory();
 
   const handleLogout = async () => {
-    try {
+    try {  
       const response = await fetch('/api/logout', {
         method: 'POST',
         headers: {

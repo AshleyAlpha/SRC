@@ -125,12 +125,12 @@ function Login() {
           </NavLink>
         </p>
 
-        <p className="text-center text-sm text-gray-500">
+        {/* <p className="text-center text-sm text-gray-500">
           Profile{" "}
           <NavLink to="/Profile" className="text-black">
             Profile
           </NavLink>
-        </p>
+        </p> */}
       </form>
     </div>
   );

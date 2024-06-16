@@ -12,7 +12,7 @@ const Drivers = () => {
   useEffect(() => {
     const fetchDrivers = async () => {
       try {
-        const response = await axios.get('https://safety-drive-connect-backend-project-2.onrender.com/api/v1/viewallDrivers');
+        const response = await axios.get('https://safety-drive-connect-backend-project-2.onrender.com/api/v1/allProfiles');
         setDrivers(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -38,10 +38,10 @@ const Drivers = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://safety-drive-connect-backend-project-2.onrender.com/api/v1/deleteDriver/${id}`
+        `https://safety-drive-connect-backend-project-2.onrender.com/api/v1/deleteProfile/${id}`
       );
       setDrivers(drivers.filter(driver => driver._id !== id));
-      console.log('Driver deleted successfully');
+      console.log('Driver_s Profile deleted successfully!');
     } catch (error) {
       console.error('Error deleting driver:', error);
     }

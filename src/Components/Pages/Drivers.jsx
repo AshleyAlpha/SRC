@@ -13,6 +13,7 @@ const Drivers = () => {
     const fetchDrivers = async () => {
       try {
         const response = await axios.get('https://safety-drive-connect-backend-project-2.onrender.com/api/v1/allProfiles');
+        console.log(response.data); // Log the response to verify the data structure
         setDrivers(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -24,29 +25,31 @@ const Drivers = () => {
 
   const indexOfLastDriver = currentPage * driversPerPage;
   const indexOfFirstDriver = indexOfLastDriver - driversPerPage;
-  const filteredDrivers = drivers.filter(driver =>
+
+  const filteredDrivers = Array.isArray(drivers) ? drivers.filter(driver =>
     driver.username.toLowerCase().includes(searchQuery.toLowerCase()) || 
     driver.email.toLowerCase().includes(searchQuery.toLowerCase()) || 
     driver.role.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  ) : [];
+
   const currentDrivers = filteredDrivers.slice(indexOfFirstDriver, indexOfLastDriver);
 
   const handleEdit = (id) => {
     navigate(`/EditDriver/${id}`);
   };
-  
+
   const handleDelete = async (id) => {
     try {
       await axios.delete(
         `https://safety-drive-connect-backend-project-2.onrender.com/api/v1/deleteProfile/${id}`
       );
       setDrivers(drivers.filter(driver => driver._id !== id));
-      console.log('Driver_s Profile deleted successfully!');
+      console.log('Driver\'s Profile deleted successfully!');
     } catch (error) {
       console.error('Error deleting driver:', error);
     }
   };
-  
+
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (

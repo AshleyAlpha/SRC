@@ -48,13 +48,13 @@ const SideBar = () => {
           Messages
         </Link>
 
-        <Link
+        {/* <Link
           to="/Testimonials"
           className="text-green-700 flex items-center"
         >
           <FiMessageCircle className="mr-2" size={24}/>
           Testimonials
-        </Link>
+        </Link> */}
 
       </div>
 

@@ -38,7 +38,19 @@ function Login() {
         const response = await axios.post('https://safety-drive-connect-backend-project-2.onrender.com/api/v1/signin', { email, password });
         // Handle response
         console.log("API Response:", response.data);
-        navigate("/Dashboard");
+        
+        const userRole = response.data.role;
+
+        if (userRole === 'Admin') {
+          navigate("/Dashboard");
+        } else if (userRole === 'Driver') {
+          navigate("/Profile");
+        } else if (userRole === 'Customer') {
+          navigate("/Dashboard");
+        } else {
+          navigate("/Profile"); // Default fallback
+        }
+        // navigate("/Dashboard");
         
       } catch (error) {
         console.log(error);

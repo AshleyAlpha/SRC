@@ -7,7 +7,7 @@ const LogoutButton = () => {
 
   const handleLogout = async () => {
     try {  
-      const response = await fetch('/api/logout', {
+      const response = await fetch('https://safety-drive-connect-backend-project-2.onrender.com/api/v1/logout', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

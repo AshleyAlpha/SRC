@@ -68,29 +68,29 @@ const SignUp = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    if (validateForm() === true) {
-      await axios({
-        method: "POST",
-        url: "https://safety-drive-connect-backend-project-2.onrender.com/api/v1/signup",
-        data: {
-          userName: userName,
-          email: email,
-          password: password,
-          role: role,
-        },
-        headers:{
-          "Content-Type":"application/json"
-        }
-      })
-        .then((response) => {
-          console.log(response.data);
-          localStorage.setItem("token", response.data.token);
-          navigate("/OTP");
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    e.preventDefault();
+    
+    if (validateForm()) {
+      try {
+        console.log("Submit")
+        const response = await axios.post(
+          "https://safety-drive-connect-backend-project-2.onrender.com/api/v1/signup",
+          {
+            userName: userName,
+            email: email,
+            password: password,
+            role: role
+
+          }
+        );
+        console.log(response.data); // Assuming you want to log the response data
+        // Redirect or perform any necessary action upon successful signup
+         navigate('/OTP'); // Example: Redirect to home page
+
+      } catch (error) {
+        console.error("Error signing up:", error);
+        // Handle error state, show error message, etc.
+      }
     }
   };
 
@@ -144,15 +144,14 @@ const SignUp = () => {
               onChange={(e) => setRole(e.target.value)}
             >
               <option value="">Select Role</option>
-              <option value="customer">Customer</option>
-              <option value="driver">Driver</option>
+              <option value="Customer">Customer</option>
+              <option value="Driver">Driver</option>
             </select>
             {roleError && <p className="text-red-500">{roleError}</p>}
           </div>
           <button
-          onClick={(e)=>{handleSubmit(e)}}
-            className="w-full  px-4 py-2 tracking-wide bg-green-700 rounded-xl text-white transition-colors duration-200 transform hover:bg-green-600 focus:outline-none"
-            type="submit"
+            onClick={(e) => handleSubmit(e)}
+            className="w-full px-4 py-2 tracking-wide bg-green-700 rounded-xl text-white transition-colors duration-200 transform hover:bg-green-600 focus:outline-none" // Change type to "button"
           >
             Sign Up
           </button>

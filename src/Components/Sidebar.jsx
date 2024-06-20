@@ -9,13 +9,22 @@ import {
 } from "react-icons/fa";
 import { ImUsers } from "react-icons/im";
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const SideBar = () => {
   const [expandUsers, setExpandUsers] = useState(false);
-
+const navigate = useNavigate();
   const toggleUsers = () => {
     setExpandUsers(!expandUsers);
   };
+  const handleLogout=()=>{
+    // axios.get("https://safety-drive-connect-backend-project-2.onrender.com/api/v1/logout'").then((res)=>{
+      localStorage.clear();
+      // console.log(res)
+      navigate("/Login")
+    // })
+  }
 
   return (
     <div className="fixed top-0 left-0 h-full  sm:pt-0  sm:w-48 bg-green-100  shadow-lg flex flex-col justify-between">
@@ -59,14 +68,14 @@ const SideBar = () => {
       </div>
 
       <div className="p-4">
-        <NavLink to="/LogoutForm">
+        
           <div className="flex items-center">
             <MdOutlineAdminPanelSettings className="mr-3 text-3xl text-green-700" />
-            <button className="bg-green-700 text-green-200 py-2 px-6 rounded-full text-lg hover:bg-green-600 transition duration-300">
+            <button onClick={handleLogout} className="bg-green-700 text-green-200 py-2 px-6 rounded-full text-lg hover:bg-green-600 transition duration-300">
               Logout
             </button>
           </div>
-        </NavLink>
+        
       </div>
     </div>
   );

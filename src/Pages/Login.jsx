@@ -42,13 +42,7 @@ function Login() {
         
       } catch (error) {
         console.log(error);
-        // if (axios.isAxiosError(error)) {
-        //   // Axios network error
-        //   console.error('Network Error:', error.message);
-        // } else {
-        //   // HTTP error
-        //   console.error('HTTP Error:', error.response.status, error.response.data);
-        // }
+       
       }
     }
   };

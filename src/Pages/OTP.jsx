@@ -48,8 +48,17 @@ const OTP = () => {
 
       console.log("OTP verification successful:", response.data);
 
+      if (userRole === 'admin') {
+        navigate("/Dashboard");
+      } else if (userRole === 'driver') {
+        navigate("/Profile");
+      } else if (userRole === 'customer') {
+        navigate("/Dashboard");
+      } else {
+        navigate("/Profile"); // Default fallback
+      }
       // Navigate to login page upon successful OTP verification
-      navigate("/Profile");
+      // navigate("/Login");
     } catch (error) {
       // If there's an error from the API
       console.error("OTP verification failed:", error);
